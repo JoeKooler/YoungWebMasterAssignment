@@ -1,23 +1,36 @@
-import Categories from "./Categories";
+import { useEffect } from "react";
+import RadioCategories from "./RadioCategories";
+import RadioSubCategories from "./RadioSubCategories";
 
 export default function SideBar({
   categories = [],
   provinces = [],
   priceRange = [],
+  subCategories = [],
+  setCategory,
+  setSubCategory,
 }) {
+  useEffect(() => {
+    // console.log("Subcat " + subCategories);
+  });
+
   return (
     <div className="SideBar">
-      <Categories categories={categories} />
-      <div>
+      <RadioCategories choices={categories} setCategory={setCategory} />
+      <select>
         {provinces.map((element) => {
-          return <div>{element}</div>;
+          return <option>{element}</option>;
         })}
-      </div>
-      <div>
+      </select>
+      <select>
         {priceRange.map((element) => {
-          return <div>{element}</div>;
+          return <option>{element}</option>;
         })}
-      </div>
+      </select>
+      <RadioSubCategories
+        choices={subCategories}
+        setSubCategory={setSubCategory}
+      />
     </div>
   );
 }
