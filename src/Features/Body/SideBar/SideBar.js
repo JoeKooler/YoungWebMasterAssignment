@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import Prices from "./Prices";
+import Provinces from "./Provinces";
 import RadioCategories from "./RadioCategories";
 import RadioSubCategories from "./RadioSubCategories";
 
@@ -16,21 +18,15 @@ export default function SideBar({
 
   return (
     <div className="SideBar">
-      <RadioCategories choices={categories} setCategory={setCategory} />
-      <select>
-        {provinces.map((element) => {
-          return <option>{element}</option>;
-        })}
-      </select>
-      <select>
-        {priceRange.map((element) => {
-          return <option>{element}</option>;
-        })}
-      </select>
-      <RadioSubCategories
-        choices={subCategories}
-        setSubCategory={setSubCategory}
-      />
+      <div className="SideBarContainer">
+        <RadioCategories choices={categories} setCategory={setCategory} />
+        <Provinces provinces={provinces} />
+        <Prices priceRange={priceRange} />
+        <RadioSubCategories
+          choices={subCategories}
+          setSubCategory={setSubCategory}
+        />
+      </div>
     </div>
   );
 }

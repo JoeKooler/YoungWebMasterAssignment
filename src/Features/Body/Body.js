@@ -11,6 +11,7 @@ export default function Body() {
   const { categories = [], provinces, priceRange, merchants } = JSONdata;
   const [subCategories, setSubCategories] = useState([]);
   const [subCategory, setSubCategory] = useState("");
+
   useEffect(() => {
     fetch("https://panjs.com/ywc18.json")
       .then((response) => response.json())
@@ -34,6 +35,7 @@ export default function Body() {
 
   return (
     <div>
+      <div className="SearchQueryText">ค้นหา</div>
       <div className="Body">
         <SideBar
           categories={categories}
@@ -42,6 +44,8 @@ export default function Body() {
           subCategories={subCategories}
           setCategory={setCategory}
           setSubCategory={setSubCategory}
+          setProvince={setProvince}
+          setPrice={setPrice}
         />
         <ProductList merchants={merchants} />
       </div>

@@ -5,7 +5,7 @@ import SearchBar from "./SearchBar/SearchBar";
 
 export default function Header() {
   return (
-    <div>
+    <div className="Header">
       <div className="LogoContainer">
         <img src={textlessLogo} className="Logo" />
         <img src={textLogo} className="TextLogo" />
