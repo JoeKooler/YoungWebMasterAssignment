@@ -11,6 +11,8 @@ export default function SideBar({
   subCategories = [],
   setCategory,
   setSubCategory,
+  setProvince,
+  setPrice,
 }) {
   useEffect(() => {
     // console.log("Subcat " + subCategories);
@@ -20,8 +22,8 @@ export default function SideBar({
     <div className="SideBar">
       <div className="SideBarContainer">
         <RadioCategories choices={categories} setCategory={setCategory} />
-        <Provinces provinces={provinces} />
-        <Prices priceRange={priceRange} />
+        <Provinces provinces={provinces} setProvince={setProvince} />
+        <Prices priceRange={priceRange} setPrice={setPrice} />
         <RadioSubCategories
           choices={subCategories}
           setSubCategory={setSubCategory}

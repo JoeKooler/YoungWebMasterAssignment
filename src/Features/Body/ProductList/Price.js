@@ -6,7 +6,6 @@ export default function Price({ price }) {
   return (
     <div className="PricesSymbol">
       {priceSymbol.map((element, index) => {
-        console.log("Index " + index + " price " + price);
         if (index + 1 > price) {
           return <div style={{ color: "gray" }}>{element}</div>;
         } else {
