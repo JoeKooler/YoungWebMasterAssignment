@@ -1,4 +1,14 @@
-export default function Prices({ priceRange, setPrice }) {
+import { useDispatch, useSelector } from "react-redux";
+import { setPriceAction } from "../../../Redux/SearchFilter/Action";
+
+export default function Prices() {
+  const dispatch = useDispatch();
+  const setPrice = (data) => dispatch(setPriceAction(data));
+
+  const { priceRange } = useSelector(
+    (state) => state.SearchFilterReducer.fetchedData
+  );
+
   const eiei = (e) => {
     switch (e.target.value) {
       case "กรุณาเลือก":

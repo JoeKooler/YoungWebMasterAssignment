@@ -2,11 +2,13 @@ import React from "react";
 import Facilities from "./Facilities";
 import IsOpen from "./IsOpen";
 import Price from "./Price";
+import { useDispatch, useSelector } from "react-redux";
 
-export default function ProductList({ merchants = [] }) {
+export default function ProductList() {
+  const { products } = useSelector((state) => state.SearchFilterReducer);
   return (
     <div className="Merchants">
-      {merchants.map((element) => {
+      {products.map((element) => {
         return (
           <div className="Merchant">
             <div

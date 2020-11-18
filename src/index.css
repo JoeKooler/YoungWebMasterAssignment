@@ -12,6 +12,17 @@
   margin: 15px 0 0 0;
 }
 
+.SearchBarHeader {
+  justify-content: center;
+  display: flex;
+}
+
+.ProvincesHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .LogoContainer {
   display: flex;
   align-items: center;
@@ -85,6 +96,7 @@
 .Provinces {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
   margin-bottom: 60px;
 }
@@ -115,7 +127,7 @@
   border: solid;
   border-radius: 3px;
   border-width: 0.5px;
-  border-color: #C9E0E9;
+  border-color: #c9e0e9;
   display: flex;
   flex-direction: row;
   align-items: flex-start;

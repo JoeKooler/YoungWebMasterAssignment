@@ -1,4 +1,13 @@
-export default function Provinces({ provinces, setProvince }) {
+import { useDispatch, useSelector } from "react-redux";
+import { setProvinceAction } from "../../../Redux/SearchFilter/Action";
+
+export default function Provinces() {
+  const dispatch = useDispatch();
+  const setProvince = (data) => dispatch(setProvinceAction(data));
+
+  const { provinces } = useSelector(
+    (state) => state.SearchFilterReducer.fetchedData
+  );
   
   const eiei = (e) => {
     console.log(e.target.value);
