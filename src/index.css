@@ -9,6 +9,8 @@
 }
 
 .Header {
+  display: flex;
+  flex-direction: column;
   margin: 15px 0 0 0;
 }
 
@@ -191,4 +193,36 @@
   padding: 12px 5px 12px 5px;
   background-color: #a1a1a1;
   color: white;
+}
+
+@media only screen and (max-width: 1278px) {
+  .Header {
+    width: 100vw;
+  }
+
+  .LogoContainer {
+    margin: 0;
+  }
+
+  .TextLogo {
+    display: none;
+  }
+  .SearchQueryText{
+    margin: 30px 0 6vh 22.5px;
+  }
+
+  .SideBar {
+    display: none;
+  }
+
+  .Merchant {
+    height: unset;
+    width: 90vw;
+    flex-direction: column;
+  }
+
+  .MerchantImagePreview {
+    min-height: 25vh;
+    min-width: 85vw;
+  }
 }
