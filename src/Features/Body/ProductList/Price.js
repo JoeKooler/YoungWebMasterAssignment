@@ -7,9 +7,9 @@ export default function Price({ price }) {
     <div className="PricesSymbol">
       {priceSymbol.map((element, index) => {
         if (index + 1 > price) {
-          return <div style={{ color: "gray" }}>{element}</div>;
-        } else {
           return <div>{element}</div>;
+        } else {
+          return <div style={{ color: "Black" }}>{element}</div>;
         }
       })}
       <div>|</div>

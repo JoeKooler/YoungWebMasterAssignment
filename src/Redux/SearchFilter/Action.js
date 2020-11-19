@@ -27,6 +27,7 @@ export const setFetchedDataAction = () => async (dispatch) => {
 export const setCategoryAction = (data) => async (dispatch) => {
   await dispatch({ type: TYPE.SET_CATEGORY, payload: data });
   await dispatch({ type: TYPE.SET_SUBCATEGORIES });
+  await dispatch({ type: TYPE.SET_SUBCATEGORY, payload: "" });
   return dispatch({ type: TYPE.SET_PRODUCTS });
 };
 
@@ -43,4 +44,8 @@ export const setPriceAction = (data) => async (dispatch) => {
 export const setSubCategoryAction = (data) => async (dispatch) => {
   await dispatch({ type: TYPE.SET_SUBCATEGORY, payload: data });
   return dispatch({ type: TYPE.SET_PRODUCTS });
+};
+
+export const setToggleSearchAction = () => {
+  return { type: TYPE.SET_TOGGLE_SEARCH };
 };

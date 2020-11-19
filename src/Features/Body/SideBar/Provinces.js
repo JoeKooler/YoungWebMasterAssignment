@@ -8,8 +8,8 @@ export default function Provinces() {
   const { provinces } = useSelector(
     (state) => state.SearchFilterReducer.fetchedData
   );
-  
-  const eiei = (e) => {
+
+  const onChangeHandler = (e) => {
     console.log(e.target.value);
     if (e.target.value === "พื้นที่ใกล้ฉัน") {
       setProvince("");
@@ -19,7 +19,7 @@ export default function Provinces() {
   return (
     <div className="Provinces">
       <strong style={{ marginBottom: "25px" }}>จังหวัด/ใกล้ฉัน</strong>
-      <select onChange={eiei}>
+      <select onChange={onChangeHandler} className="SideBarSelect">
         <option>พื้นที่ใกล้ฉัน</option>;
         {provinces.map((element) => {
           return <option>{element}</option>;

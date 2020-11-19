@@ -5,18 +5,22 @@ export default function RadioSubCategories() {
   const dispatch = useDispatch();
   const setSubCategory = (data) => dispatch(setSubCategoryAction(data));
 
-  const { subCategory, subCategories } = useSelector(
+  const { category, subCategory, subCategories } = useSelector(
     (state) => state.SearchFilterReducer
   );
 
   const onChangeHandler = (e) => {
+    console.log("Sub ", subCategory);
     setSubCategory(e.target.value);
-    console.log("Sub " + subCategory);
   };
 
   return (
     <div className="Categories">
-      <strong style={{ marginBottom: "40px" }}>ประเภท</strong>
+      {subCategories.length > 0 ? (
+        <strong style={{ marginBottom: "40px" }}>ประเภท {category}</strong>
+      ) : (
+        <></>
+      )}
       {subCategories.map((element) => {
         return (
           <label onChange={onChangeHandler} className="RadioContainer">

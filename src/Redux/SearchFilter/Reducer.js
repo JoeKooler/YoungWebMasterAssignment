@@ -28,6 +28,7 @@ const initialState = {
   subCategories: [],
   subCategory: "",
   products: [],
+  isSearchOpen: false,
 };
 
 const setProducts = ({
@@ -96,11 +97,13 @@ const reducer = (state = initialState, action) => {
     case TYPE.SET_PRICE:
       return { ...state, price: payload };
     case TYPE.SET_SUBCATEGORY:
-      return { ...state, subcategory: payload };
+      return { ...state, subCategory: payload };
     case TYPE.SET_PRODUCTS:
       return { ...state, products: setProducts(state) };
     case TYPE.SET_SUBCATEGORIES:
       return { ...state, subCategories: setSubCategories(state) };
+    case TYPE.SET_TOGGLE_SEARCH:
+      return { ...state, isSearchOpen: !state.isSearchOpen };
     default:
       return state;
   }

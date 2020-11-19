@@ -7,7 +7,9 @@ export default function NavBar() {
   const resetSearch = () => dispatch(resetSearchAction());
   return (
     <div className="NavBar">
-      <button onClick={resetSearch}>หน้าแรก</button>
+      <button onClick={resetSearch} className="ResetSearchButton">
+        หน้าแรก
+      </button>
     </div>
   );
 }

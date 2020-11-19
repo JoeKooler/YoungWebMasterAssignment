@@ -2,10 +2,16 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Prompt", sans-serif;
+  transition: 300ms;
 }
 
 :root {
   --NavBG: #2f4080;
+  --BorderGrey: #c4c4c4;
+  --PrimaryGrey: #8d8d8d;
+  --MobileBrandText: 5vw;
+  --MobileRegularText: 2.3vw;
 }
 
 .Header {
@@ -14,15 +20,63 @@
   margin: 15px 0 0 0;
 }
 
+.SearchBarContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .SearchBarHeader {
   justify-content: center;
   display: flex;
 }
 
-.ProvincesHeader {
+.SearchBar {
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: solid;
+  border-width: 1px;
+  border-radius: 0.5em;
+  border-color: var(--BorderGrey);
+  overflow: hidden;
+}
+
+.NavProvince {
+  height: 100%;
+  align-items: center;
+  display: flex;
+}
+
+.NavProvinceSelectIcon {
+  margin-left: 1vw;
+}
+
+.NavProvinceBox {
+  border: none;
+}
+
+.SearchBox {
+  width: 60vw;
+  height: 100%;
+  border: none;
+}
+
+.SearchButton {
+  height: 100%;
+  padding: 0 10px 0 10px;
+  background-color: white;
+  border: none;
+}
+
+.SearchButton:hover {
+  background-color: #d4d3d3fb;
+  cursor: pointer;
+}
+
+.ToggleSearchFilter {
+  display: none;
 }
 
 .LogoContainer {
@@ -40,12 +94,31 @@
 }
 
 .NavBar {
+  display: flex;
   height: 65px;
   margin: 15px 0 0 0;
+  justify-content: space-between;
+  align-items: center;
   background-color: var(--NavBG);
 }
 
+.ResetSearchButton {
+  background: none;
+  border: none;
+  color: white;
+  text-decoration: underline;
+  margin-left: 160px;
+  font-size: 1.3em;
+  font-weight: 300;
+}
+
+.ResetSearchButton:hover {
+  cursor: pointer;
+}
+
 .SearchQueryText {
+  font-size: 2em;
+  font-weight: bold;
   text-align: left;
   margin: 30px 0 75px 22.5px;
 }
@@ -57,6 +130,7 @@
 .SideBar {
   width: 467.5px;
   margin: 0 0 0 22.5px;
+  background-color: white;
   border: solid;
   border-width: 0.5px;
   border-color: #2f4080;
@@ -93,6 +167,12 @@
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 60px;
+}
+
+.SideBarSelect {
+  width: 350px;
+  height: 40px;
+  border-color: var(--BorderGrey);
 }
 
 .Provinces {
@@ -162,7 +242,8 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  margin-bottom: 75px;
+  margin-bottom: 3.5vw;
+  color: var(--PrimaryGrey);
 }
 
 .MerchantHighlight {
@@ -170,6 +251,7 @@
   flex-direction: row;
   align-items: flex-start;
   margin-bottom: 30px;
+  color: var(--PrimaryGrey);
 }
 
 .MerchantRecommended {
@@ -184,18 +266,75 @@
 }
 
 .ShopStatus .Open {
-  padding: 12px 5px 12px 5px;
+  padding: 5px 5px 5px 5px;
   background-color: #1fc300;
+  border-radius: 0.25em;
   color: white;
 }
 
 .ShopStatus .Closed {
-  padding: 12px 5px 12px 5px;
+  padding: 5px 5px 5px 5px;
   background-color: #a1a1a1;
+  border-radius: 0.25em;
   color: white;
 }
 
+.Show {
+}
+
 @media only screen and (max-width: 1278px) {
+  .LogoContainer {
+    margin: 0 0 0 10vw;
+  }
+
+  .TextLogo {
+    display: none;
+  }
+
+  .NavProvinceSelectIcon {
+    display: flex;
+    margin-right: 2vw;
+  }
+
+  .SearchBox {
+    width: 50vw;
+  }
+
+  .ToggleSearchFilter {
+    margin-left: 1vw;
+    display: flex;
+    color: var(--NavBG);
+  }
+
+  .ResetSearchButton {
+    margin-left: 6vw;
+  }
+
+  .SideBar {
+    position: absolute;
+    /* display: none; */
+    transform: translate(-500px, 0px);
+    border-color: white;
+  }
+
+  .Show {
+    transform: translate(0px, 0px);
+  }
+
+  .Merchant {
+    width: 95vw;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .SearchBarHeader {
+    justify-content: space-around;
+  }
+
+  .Logo {
+    height: 10vw;
+  }
+
   .Header {
     width: 100vw;
   }
@@ -204,16 +343,27 @@
     margin: 0;
   }
 
-  .TextLogo {
+  .NavProvince {
     display: none;
   }
-  .SearchQueryText{
+
+  .ToggleSearchFilter {
+    margin-left: 2vw;
+    display: flex;
+    color: var(--NavBG);
+  }
+
+  .SearchQueryText {
     margin: 30px 0 6vh 22.5px;
   }
 
-  .SideBar {
-    display: none;
+  .SideBarSelect {
+    width: 80vw;
   }
+
+  /* .SideBar {
+    display: none;
+  } */
 
   .Merchant {
     height: unset;
@@ -221,8 +371,35 @@
     flex-direction: column;
   }
 
+  .MerchantHead {
+    font-size: var(--MobileBrandText);
+  }
+
   .MerchantImagePreview {
     min-height: 25vh;
     min-width: 85vw;
+  }
+  .MerchantSecondRow {
+    font-size: var(--MobileRegularText);
+    font-weight: 400;
+    margin-bottom: 3em;
+  }
+
+  .MerchantHighlight {
+    font-size: var(--MobileRegularText);
+    font-weight: 400;
+    margin-bottom: 1em;
+  }
+
+  .MerchantRecommended {
+    font-size: var(--MobileRegularText);
+  }
+
+  .ShopStatus .Closed {
+    padding: 0em 0.25em 0em 0.25em;
+  }
+
+  .ShopStatus .Open {
+    padding: 0em 0.25em 0em 0.25em;
   }
 }

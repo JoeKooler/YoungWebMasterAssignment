@@ -9,7 +9,7 @@ export default function Prices() {
     (state) => state.SearchFilterReducer.fetchedData
   );
 
-  const eiei = (e) => {
+  const priceNumToText = (e) => {
     switch (e.target.value) {
       case "กรุณาเลือก":
         setPrice("");
@@ -33,7 +33,7 @@ export default function Prices() {
   return (
     <div className="Prices">
       <strong style={{ marginBottom: "25px" }}>ราคา</strong>
-      <select onChange={eiei}>
+      <select onChange={priceNumToText} className="SideBarSelect">
         <option>กรุณาเลือก</option>
         {priceRange.map((element) => {
           return <option>{element}</option>;
