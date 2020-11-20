@@ -10,6 +10,7 @@ export default function NavBar() {
       <button onClick={resetSearch} className="ResetSearchButton">
         หน้าแรก
       </button>
+      <div className="NavFind">/ ค้นหา</div>
     </div>
   );
 }

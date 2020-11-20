@@ -6,11 +6,21 @@ export default function Facilities({ facilities }) {
   const wordToImage = (facility) => {
     switch (facility) {
       case "ที่จอดรถ":
-        return <img src={ParkingLot} alt="จอดได้ไม่งก"></img>;
+        return (
+          <img
+            src={ParkingLot}
+            alt="จอดได้ไม่งก"
+            className="FacilityImage"
+          ></img>
+        );
       case "รับจองล่วงหน้า":
-        return <img src={Reserve} alt="จองได้ๆ"></img>;
+        return (
+          <img src={Reserve} alt="จองได้ๆ" className="FacilityImage"></img>
+        );
       case "สามารถนำสัตว์เลี้ยงเข้าได้":
-        return <img src={Delivery} alt="จอดได้ไม่งก"></img>;
+        return (
+          <img src={Delivery} alt="จอดได้ไม่งก" className="FacilityImage"></img>
+        );
       default:
     }
   };

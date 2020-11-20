@@ -12,7 +12,7 @@ export default function Price({ price }) {
           return <div style={{ color: "Black" }}>{element}</div>;
         }
       })}
-      <div>|</div>
+      <div style={{ marginLeft: "1vw" }}>|</div>
     </div>
   );
 }

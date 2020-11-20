@@ -29,6 +29,7 @@ export default function RadioSubCategories() {
               value={element}
               name={element}
               checked={element === subCategory}
+              className="RadioButton"
             ></input>
             <div className="RadioText">
               {element === "" ? "ทั้งหมด" : element}

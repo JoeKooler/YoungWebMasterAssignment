@@ -29,6 +29,7 @@ const initialState = {
   subCategory: "",
   products: [],
   isSearchOpen: false,
+  currentContents: 2,
 };
 
 const setProducts = ({
@@ -72,6 +73,7 @@ const setSubCategories = ({ category, fetchedData }) => {
 
 const reducer = (state = initialState, action) => {
   const { type, payload } = action;
+  console.log("eeqq", type);
   switch (type) {
     case TYPE.SET_RESET_SEARCH:
       return {
@@ -104,6 +106,10 @@ const reducer = (state = initialState, action) => {
       return { ...state, subCategories: setSubCategories(state) };
     case TYPE.SET_TOGGLE_SEARCH:
       return { ...state, isSearchOpen: !state.isSearchOpen };
+    case TYPE.GET_MORE_CURRENT_CONTENTS:
+      return { ...state, currentContents: state.currentContents + 2 };
+    case TYPE.RESET_CURRENT_CONTENTS:
+      return { ...state, currentContents: 2 };
     default:
       return state;
   }

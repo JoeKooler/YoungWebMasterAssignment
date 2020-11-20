@@ -24,6 +24,7 @@ export default function RadioCategories() {
               value={element.name}
               name={element.name}
               checked={element.name === category}
+              className="RadioButton"
             ></input>
             <div className="RadioText">
               {element.name === "" ? "ทั้งหมด" : element.name}

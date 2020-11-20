@@ -22,7 +22,9 @@ export default function Product({ element }) {
         <div className="MerchantSecondRow">
           <div>{element.subcategoryName} |</div>
           <Price price={element.priceLevel} />
-          <div>{element.addressDistrictName}</div>
+          <div className="DistrictName">
+            {element.addressDistrictName}
+          </div>
           <div>{element.addressProvinceName}</div>
         </div>
         <div className="MerchantHighlight">
