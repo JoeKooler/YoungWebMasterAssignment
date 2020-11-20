@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/YoungWebMasterAssignment/static/css/main.ba28fd72.chunk.css",
-    "main.js": "/YoungWebMasterAssignment/static/js/main.c91ac7f8.chunk.js",
-    "main.js.map": "/YoungWebMasterAssignment/static/js/main.c91ac7f8.chunk.js.map",
+    "main.css": "/YoungWebMasterAssignment/static/css/main.402ea3af.chunk.css",
+    "main.js": "/YoungWebMasterAssignment/static/js/main.3d3de154.chunk.js",
+    "main.js.map": "/YoungWebMasterAssignment/static/js/main.3d3de154.chunk.js.map",
     "runtime-main.js": "/YoungWebMasterAssignment/static/js/runtime-main.df3cf551.js",
     "runtime-main.js.map": "/YoungWebMasterAssignment/static/js/runtime-main.df3cf551.js.map",
     "static/js/2.241817bc.chunk.js": "/YoungWebMasterAssignment/static/js/2.241817bc.chunk.js",
     "static/js/2.241817bc.chunk.js.map": "/YoungWebMasterAssignment/static/js/2.241817bc.chunk.js.map",
     "index.html": "/YoungWebMasterAssignment/index.html",
-    "static/css/main.ba28fd72.chunk.css.map": "/YoungWebMasterAssignment/static/css/main.ba28fd72.chunk.css.map",
+    "static/css/main.402ea3af.chunk.css.map": "/YoungWebMasterAssignment/static/css/main.402ea3af.chunk.css.map",
     "static/js/2.241817bc.chunk.js.LICENSE.txt": "/YoungWebMasterAssignment/static/js/2.241817bc.chunk.js.LICENSE.txt",
     "static/media/textless-logo.ba232b85.png": "/YoungWebMasterAssignment/static/media/textless-logo.ba232b85.png"
   },
   "entrypoints": [
     "static/js/runtime-main.df3cf551.js",
     "static/js/2.241817bc.chunk.js",
-    "static/css/main.ba28fd72.chunk.css",
-    "static/js/main.c91ac7f8.chunk.js"
+    "static/css/main.402ea3af.chunk.css",
+    "static/js/main.3d3de154.chunk.js"
   ]
 }
